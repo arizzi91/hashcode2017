@@ -11,8 +11,8 @@ public class Endpoint {
     private int number_of_caches_connected;
     public final static int LIMIT_NUMBER_ENDPOINT=1000;
     private static ArrayList<Endpoint> endpoints;
-    private  Map<Integer,Integer> chaches_server;
-    private Map<Integer,Integer>request_video;//id cache,latency
+    private  Map<Integer,Integer> chaches_server; //id cache, latenza dall'endpoint
+    private Map<Integer,Integer>request_video;//id video,frequenza con cui è richiesto
 
 
     public Endpoint(int id,int latency_to_datacenter,int number_of_caches_connected) {
@@ -22,11 +22,11 @@ public class Endpoint {
         chaches_server=new HashMap<>(number_of_caches_connected);
         request_video=new HashMap<>();
     }
-
+    //get ID endpoint
     public int getId() {
         return id;
     }
-
+	
     public int getNumberOfCachesConnected() {
         return number_of_caches_connected;
     }
@@ -46,7 +46,7 @@ public class Endpoint {
     public static int getNumberEndpoint() {
         return number_endpoint;
     }
-
+    	
     public static void addCachesServer(Endpoint endpoint,int id, int latency_cache){
         endpoint.chaches_server.put(id,latency_cache);
     }

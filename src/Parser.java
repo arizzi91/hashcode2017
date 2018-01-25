@@ -47,12 +47,12 @@ public class Parser {
         //read section endpoints
         for(int i=0;i<nEndpoint.getNumberEndpoint();i++){
             line=in.readLine();
-            //control constraints number: latency video in datacenter, number of cache
+            //controllo su: latency video in datacenter, numbero di cache
             parameter=line.split(" ");
             if (Integer.parseInt(parameter[0])>Datacenter.getLimit_latency_inferior() && Integer.parseInt(parameter[0])<Datacenter.getLimit_latency_superior()
                     && Integer.parseInt(parameter[1])<Cache_Server.getNumberCache()){
                 Endpoint.addEndpoint(new Endpoint(i,Integer.parseInt(parameter[0]),Integer.parseInt(parameter[1])));
-                if(Integer.parseInt(parameter[1]) != 0){//control if cache number is 0
+                if(Integer.parseInt(parameter[1]) != 0){//controllo se il numero di cache è pari a 0
                     for (int j=0; j<Integer.parseInt(parameter[1]);j++){
                         line=in.readLine();
                         String []parameter_cache = line.split(" ");

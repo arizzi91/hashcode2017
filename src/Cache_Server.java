@@ -28,7 +28,7 @@ public class Cache_Server {
         return capacity;
     }
 
-
+    //restituisci oggetto cache server dall'array dato un indice
     public static Cache_Server getCacheServer(int i){
         return cache_servers.get(i);
     }

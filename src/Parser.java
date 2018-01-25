@@ -45,8 +45,7 @@ public class Parser {
             }
         }
         //read section endpoints
-        int number_endpoint=Endpoint.getNumberEndpoint();
-        for(int i=0;i<number_endpoint;i++){
+        for(int i=0;i<nEndpoint.getNumberEndpoint();i++){
             line=in.readLine();
             //control constraints number: latency video in datacenter, number of cache
             parameter=line.split(" ");
